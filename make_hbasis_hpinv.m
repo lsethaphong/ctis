@@ -1,0 +1,14 @@
+function make_hbasis_hpinv;
+src_size = 433;
+src_x = src_size;
+src_y = src_size;
+FPA_sizeX = 4096;
+FPA_sizeY = 2048;
+vxl_depth = 41;
+n_hcol = vxl_depth;
+tol = 1.0e-7;
+ftol = 1.0e-7;
+nz_pts = 127;
+%sps_construct_basis(src_size,FPA_sizeX,FPA_sizeY,vxl_depth);
+sps_greville(n_hcol,tol,ftol,FPA_sizeX,FPA_sizeY,src_x,src_y,nz_pts,vxl_depth);
+return;
